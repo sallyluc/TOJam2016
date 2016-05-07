@@ -1,0 +1,118 @@
+fileFormatVersion: 2
+guid: b4e70d2a34a73456986d723fa31b7b33
+timeCreated: 1462654266
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Breezy shirt
+    100002: Crop top
+    100004: Elf shirt
+    100006: Olden shirt
+    100008: Party shirt
+    100010: //RootNode
+    100012: Sleeveless shirt
+    100014: Spagetti strap shirt
+    100016: Triangle shirt
+    100018: V tee
+    400000: Breezy shirt
+    400002: Crop top
+    400004: Elf shirt
+    400006: Olden shirt
+    400008: Party shirt
+    400010: //RootNode
+    400012: Sleeveless shirt
+    400014: Spagetti strap shirt
+    400016: Triangle shirt
+    400018: V tee
+    2300000: Breezy shirt
+    2300002: Crop top
+    2300004: Elf shirt
+    2300006: Olden shirt
+    2300008: Party shirt
+    2300010: Sleeveless shirt
+    2300012: Spagetti strap shirt
+    2300014: Triangle shirt
+    2300016: V tee
+    3300000: Breezy shirt
+    3300002: Crop top
+    3300004: Elf shirt
+    3300006: Olden shirt
+    3300008: Party shirt
+    3300010: Sleeveless shirt
+    3300012: Spagetti strap shirt
+    3300014: Triangle shirt
+    3300016: V tee
+    4300000: Olden shirt
+    4300002: Elf shirt
+    4300004: Crop top
+    4300006: Triangle shirt
+    4300008: Spagetti strap shirt
+    4300010: Sleeveless shirt
+    4300012: Party shirt
+    4300014: Breezy shirt
+    4300016: V tee
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

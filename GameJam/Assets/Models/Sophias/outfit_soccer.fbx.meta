@@ -1,0 +1,98 @@
+fileFormatVersion: 2
+guid: 1756418161cac43e795d5c6d7affe0e0
+timeCreated: 1462654263
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Soccer_cleat
+    100004: Soccer_left sock
+    100006: Soccer_right sock
+    100008: Soccer_shirt
+    100010: Soccer_shorts
+    400000: //RootNode
+    400002: Soccer_cleat
+    400004: Soccer_left sock
+    400006: Soccer_right sock
+    400008: Soccer_shirt
+    400010: Soccer_shorts
+    2300000: Soccer_cleat
+    2300002: Soccer_left sock
+    2300004: Soccer_right sock
+    2300006: Soccer_shirt
+    2300008: Soccer_shorts
+    3300000: Soccer_cleat
+    3300002: Soccer_left sock
+    3300004: Soccer_right sock
+    3300006: Soccer_shirt
+    3300008: Soccer_shorts
+    4300000: Soccer_cleat
+    4300002: Soccer_left sock
+    4300004: Soccer_right sock
+    4300006: Soccer_shirt
+    4300008: Soccer_shorts
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

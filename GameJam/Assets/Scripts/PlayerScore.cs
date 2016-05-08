@@ -17,6 +17,10 @@ public class PlayerScore : MonoBehaviour {
 	public int[] comboCount = new int[20]; 
 
 	int multiplier = 10; 
+
+
+	public string [] encouragementPhrases; 
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -28,8 +32,6 @@ public class PlayerScore : MonoBehaviour {
 			playerGainedPoint = false;
 			Debug.Log ("Player Score: " + playerScore);
 		}
-
-	
 	}
 
 
@@ -74,38 +76,4 @@ public class PlayerScore : MonoBehaviour {
 			foundACombo = false; 
 		}
 	}
-
-
-	/*
-	void OnTriggerEnter (Collider other)
-	{
-		for (int i = 0; i < fivePointsItems.Length; i++){
-			if (other.gameObject.tag == fivePointsItems [i]) {
-				playerScore += 5; 
-				playerGainedPoint = true; 
-				break;
-			}
-		}
-		for (int i = 0; i < tenPointsItems.Length; i++){
-			if (other.gameObject.tag == fivePointsItems [i]) {
-				playerScore += 10; 
-				playerGainedPoint = true; 
-				break;
-			}
-		}
-		for (int i = 0; i < minusFivePointsItems.Length; i++){
-			if (other.gameObject.tag == fivePointsItems [i]) {
-				playerScore += -5; 
-				break;
-			}
-		}
-		for (int i = 0; i < minusTenPointsItems.Length; i++){
-			if (other.gameObject.tag == fivePointsItems [i]) {
-				playerScore += -10; 
-				break;
-			}
-		}
-		currentComboTag = other.gameObject.tag;
-	}
-	*/
 }

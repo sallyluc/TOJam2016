@@ -11,6 +11,9 @@ public class CameraTarget : MonoBehaviour {
 	bool rotationRightNeeded = false;
 
 
+	bool rotateToX = false, rotateToZ = true; 
+	string currentFace = "front"; 
+
 	float currentXLoc;
 	float currentYLoc;
 	float currentZLoc;
@@ -19,16 +22,17 @@ public class CameraTarget : MonoBehaviour {
 
 	public GameObject ragDoll;
 
+	int dir = 0; // front, right, back, left;
+
 	void Start () {
-		//	ragDoll = GameObject.Find ("Ragdoll").gameObject;
 	}
 
 	// Update is called once per frame
 	void Update () {
-		//CameraRotation ();
+		CameraRotation ();
 		CameraMovement ();
 
-
+		Debug.Log (dir);
 	}
 
 	void CameraMovement ()
@@ -36,40 +40,84 @@ public class CameraTarget : MonoBehaviour {
 		ragdollLocX = ragDoll.transform.position.x;
 		currentYLoc = gameObject.transform.position.y;
 		ragdollLocZ = ragDoll.transform.position.z;
-		float clampDollX = Mathf.Clamp (ragdollLocX, 74, 476);//112, -270
+		float clampDollX = Mathf.Clamp (ragdollLocX, 221, 410);//112, -270
 		float clamDollZ = Mathf.Clamp(ragdollLocZ, 112, -220);
 		transform.position = new Vector3 (clampDollX, currentYLoc, ragdollLocZ);
 	}
-	/*void CameraMovement ()
+
+
+
+	int CameraFaceDirection(bool increment) // false = subtract. true = add
 	{
-		ragdollLocX = GameObject.Find ("Ragdoll").transform.position.x; 
-		ragdollLocY = GameObject.Find ("Ragdoll").transform.position.y; 
-		ragdollLocZ = GameObject.Find ("Ragdoll").transform.position.z; 
-
-		currentYLoc = gameObject.transform.position.y;
-
-		if (currentXLoc <= 45 || ragdollLocX <= 45) {
-			ragdollLocX = 45;
-		} else if (currentXLoc >= 490 || ragdollLocX >= 490) {
-			ragdollLocX = 490;
+		if (increment == false) {
+			dir -= 1;
+		} else {
+			dir += 1;
 		}
-		currentXLoc = ragdollLocX;
-		currentZLoc = ragdollLocZ;
 
-		
-		gameObject.transform.position = new Vector3 (currentXLoc, currentYLoc, currentZLoc);
-			
+		if (dir < 0)
+			dir = 3;
+
+		if (dir > 3)
+			dir = 0; 
+
+		return dir; 
 	}
-*/
+
 	void CameraRotation ()
 	{
-		if (Input.GetKeyDown (KeyCode.A)) {
-			rotationLeftNeeded = true; 
-		}
-		if (Input.GetKeyDown (KeyCode.D)) {
-			rotationRightNeeded = true; 
-		}
+		if (index == 0) {
+			if (rotateToX == true) {
+				if (Input.GetKeyDown (KeyCode.A)) {
+					if (dir == 1) {
+						rotationRightNeeded = true;
+						CameraFaceDirection (true);
+					} else {
+						rotationLeftNeeded = true; 
+						CameraFaceDirection (false);
+					}
 
+					rotateToX = false; 
+					rotateToZ = true; 
+				}
+				if (Input.GetKeyDown (KeyCode.D)) {
+					if (dir == 3) {
+						rotationRightNeeded = true;
+						CameraFaceDirection (true);
+					} else {
+						rotationLeftNeeded = true;
+						CameraFaceDirection (false);
+					}
+					rotateToX = false; 
+					rotateToZ = true; 
+				}
+			}
+			if (rotateToZ == true) {
+				if (Input.GetKeyDown (KeyCode.W)) {
+					if (dir == 0) {
+						rotationRightNeeded = true;
+						CameraFaceDirection (true);
+					} else {
+						rotationLeftNeeded = true;
+						CameraFaceDirection (false);
+					}
+					rotateToX = true; 
+					rotateToZ = false; 
+				}
+				if (Input.GetKeyDown (KeyCode.S)) {
+
+					if (dir == 2) {
+						rotationLeftNeeded = true; 
+						CameraFaceDirection (false);
+					} else {
+						rotationRightNeeded = true;
+						CameraFaceDirection (true);
+					}
+					rotateToX = true; 
+					rotateToZ = false; 
+				}
+			}
+		}
 
 		if (rotationLeftNeeded == true) {
 			index -= 1;

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraTarget : MonoBehaviour {
 
-	int rotationValue = 90; 
+	int rotationValue = 0; 
 	int currentRotation = 0; 
 	int index = 0; 
 	float moveIndex = 0.0F; 

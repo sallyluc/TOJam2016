@@ -1,32 +1,39 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI; 
 
 public class PopUpInstantiation : MonoBehaviour {
-	Material gameTexture;
-	float newAlpha = 1; 
+	Color oldMat, newMat; 
+
+	PlayerScore playerScore;
 
 	// Use this for initialization
 	void Start () {
-		//gameTexture = gameObject.GetComponent<Renderer> ().material;
+		playerScore = GameObject.Find ("Ragdoll").GetComponent<PlayerScore> ();
+
+		oldMat = playerScore.popUpText.color;
+		newMat = new Color (oldMat.r, oldMat.g, oldMat.b, 1.0F);
+		playerScore.newText.color = newMat;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		StartCoroutine (WaitToFade (3.0F));
-		FadeOutAndDestroy ();
 	}
 
 	IEnumerator WaitToFade(float waitTime) {
 		yield return new WaitForSeconds(waitTime);
+		FadeOutAndDestroy ();
 	}
 
 	void FadeOutAndDestroy()
 	{
-	/*	newAlpha -= Time.deltaTime; 
-		gameTexture.color.a = newAlpha; 
+		oldMat = playerScore.newText.color;
+		newMat = new Color (oldMat.r, oldMat.g, oldMat.b, oldMat.a - Time.deltaTime);
 
-		if (gameTexture.color.a <= 0)
+		playerScore.newText.color = newMat; 
+		if (newMat.a <= 0)
 			Destroy (gameObject);
-*/	}
+	}
 
 }

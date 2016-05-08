@@ -5,6 +5,7 @@ public class AttachClothing : MonoBehaviour {
 
 	GameObject player; 
 	PlayerScore playerScore; 
+
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Ragdoll");
@@ -43,6 +44,7 @@ public class AttachClothing : MonoBehaviour {
 			playerScore.currentComboTag = col.gameObject.tag;
 			col.gameObject.transform.parent = gameObject.transform;
 			col.gameObject.tag = "attached";
+			playerScore.attachPosition = col.gameObject.transform.position;
 		}
 
 	}

@@ -19,16 +19,21 @@ public class PlayerScore : MonoBehaviour {
 
 	int multiplier = 10; 
 
-	public Text popUpText; 
+	public Text popUpText; // prefab
+	public Text newText; //text instantiated 
+
+	public GameObject canvas; 
 
 	public string [] encouragementPhrases; 
 
 
+	[HideInInspector]
+	public Vector3 attachPosition; 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (playerGainedPoint == true) {
@@ -45,7 +50,17 @@ public class PlayerScore : MonoBehaviour {
 
 		popUpText.text = encouragementPhrases [randomNum];
 
-		Instantiate (popUpText);
+
+		newText = Instantiate (popUpText, new Vector3 (Random.Range (-10,10),Random.Range (-10,10),Random.Range (-10,10)), Quaternion.identity) as Text;
+		newText.transform.SetParent(canvas.transform);
+		//newText.transform.position = attachPosition;
+		float locY = Random.Range (200, 450);
+		float locX = Random.Range (200, 500);
+		newText.transform.position = new Vector3 (locX, locY, 0.0F);
+		//newText.transform.localPosition = new Vector3(0.0F, 205.0F, 0.0F); 
+
+		//Debug.Log ("Instantiate (popUpText); " + popUpText.text);
+
 	}
 
 

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
 
@@ -34,8 +35,9 @@ public class Timer : MonoBehaviour {
 
 		} 
 		else {
-			// End game
+			SceneManager.LoadScene ("EndScene");
 		}
+
 		timerText.text = timerAsString;
 	}
 }

@@ -23,7 +23,7 @@ public class PlayerScore : MonoBehaviour {
 	public Text newText; //text instantiated 
 
 	public GameObject canvas; 
-
+	public Text score; 
 	public string [] encouragementPhrases; 
 
 
@@ -31,11 +31,12 @@ public class PlayerScore : MonoBehaviour {
 	public Vector3 attachPosition; 
 	// Use this for initialization
 	void Start () {
-
+		score.text = "Score: 0"; 
 	}
 
 	// Update is called once per frame
 	void Update () {
+		score.text = "Score: " + playerScore; 
 		if (playerGainedPoint == true) {
 			CreateRandomPhrase ();
 			CheckingForCombos ();

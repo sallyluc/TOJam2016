@@ -17,9 +17,12 @@ public class CameraTarget : MonoBehaviour {
 
 	float ragdollLocX, ragdollLocY, ragdollLocZ;
 
+	public GameObject ragDoll;
+
 	void Start () {
+		//	ragDoll = GameObject.Find ("Ragdoll").gameObject;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		//CameraRotation ();
@@ -27,13 +30,15 @@ public class CameraTarget : MonoBehaviour {
 
 
 	}
-		
+
 	void CameraMovement ()
 	{
-		ragdollLocX = GameObject.Find ("Ragdoll").transform.position.x;
+		ragdollLocX = ragDoll.transform.position.x;
 		currentYLoc = gameObject.transform.position.y;
-		ragdollLocZ = GameObject.Find ("Ragdoll").transform.position.z;
-		transform.position = new Vector3 (ragdollLocX, currentYLoc, ragdollLocZ);
+		ragdollLocZ = ragDoll.transform.position.z;
+		float clampDollX = Mathf.Clamp (ragdollLocX, 74, 476);//112, -270
+		float clamDollZ = Mathf.Clamp(ragdollLocZ, 112, -220);
+		transform.position = new Vector3 (clampDollX, currentYLoc, ragdollLocZ);
 	}
 	/*void CameraMovement ()
 	{

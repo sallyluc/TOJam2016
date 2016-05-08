@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI; 
 
 public class PlayerScore : MonoBehaviour {
 	[HideInInspector]
@@ -18,22 +19,32 @@ public class PlayerScore : MonoBehaviour {
 
 	int multiplier = 10; 
 
+	public Text popUpText; 
 
 	public string [] encouragementPhrases; 
 
+
 	// Use this for initialization
 	void Start () {
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (playerGainedPoint == true) {
+			CreateRandomPhrase ();
 			CheckingForCombos ();
 			playerGainedPoint = false;
 			Debug.Log ("Player Score: " + playerScore);
 		}
 	}
 
+	void CreateRandomPhrase()
+	{
+		int randomNum = Random.Range (0, encouragementPhrases.Length);
+
+		popUpText.text = encouragementPhrases [randomNum];
+	}
 
 
 	void CheckingForCombos()

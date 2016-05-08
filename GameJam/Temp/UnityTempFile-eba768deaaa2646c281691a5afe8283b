@@ -84,6 +84,7 @@
 'Assets/Scripts/CameraTarget.cs'
 'Assets/Scripts/PlayerMovement.cs'
 'Assets/Scripts/PlayerScore.cs'
+'Assets/Scripts/PopUpInstantiation.cs'
 'Assets/Scripts/Timer.cs'
 -r:'/Applications/Unity 5.3.3/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity 5.3.3/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'

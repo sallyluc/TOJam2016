@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI; 
 
 public class PlayerScore : MonoBehaviour {
 	[HideInInspector]
@@ -17,21 +18,35 @@ public class PlayerScore : MonoBehaviour {
 	public int[] comboCount = new int[20]; 
 
 	int multiplier = 10; 
+
+	public Text popUpText; 
+
+	public string [] encouragementPhrases; 
+
+
 	// Use this for initialization
 	void Start () {
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (playerGainedPoint == true) {
+			CreateRandomPhrase ();
 			CheckingForCombos ();
 			playerGainedPoint = false;
 			Debug.Log ("Player Score: " + playerScore);
 		}
-
-	
 	}
 
+	void CreateRandomPhrase()
+	{
+		int randomNum = Random.Range (0, encouragementPhrases.Length);
+
+		popUpText.text = encouragementPhrases [randomNum];
+
+		Instantiate (popUpText);
+	}
 
 
 	void CheckingForCombos()
@@ -74,38 +89,4 @@ public class PlayerScore : MonoBehaviour {
 			foundACombo = false; 
 		}
 	}
-
-
-	/*
-	void OnTriggerEnter (Collider other)
-	{
-		for (int i = 0; i < fivePointsItems.Length; i++){
-			if (other.gameObject.tag == fivePointsItems [i]) {
-				playerScore += 5; 
-				playerGainedPoint = true; 
-				break;
-			}
-		}
-		for (int i = 0; i < tenPointsItems.Length; i++){
-			if (other.gameObject.tag == fivePointsItems [i]) {
-				playerScore += 10; 
-				playerGainedPoint = true; 
-				break;
-			}
-		}
-		for (int i = 0; i < minusFivePointsItems.Length; i++){
-			if (other.gameObject.tag == fivePointsItems [i]) {
-				playerScore += -5; 
-				break;
-			}
-		}
-		for (int i = 0; i < minusTenPointsItems.Length; i++){
-			if (other.gameObject.tag == fivePointsItems [i]) {
-				playerScore += -10; 
-				break;
-			}
-		}
-		currentComboTag = other.gameObject.tag;
-	}
-	*/
 }
